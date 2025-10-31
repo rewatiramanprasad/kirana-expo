@@ -1,22 +1,40 @@
+// module.exports = function (api) {
+//   api.cache(true)
+//   return {
+//     presets: [
+//       ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
+//       'nativewind/babel',
+//     ],
+//     plugins: [
+//       ['@babel/plugin-transform-class-properties', { loose: true }],
+//       ['@babel/plugin-transform-private-methods', { loose: true }],
+//       ['@babel/plugin-transform-private-property-in-object', { loose: true }],
+//       'react-native-reanimated/plugin',
+//     ],
+//   }
+// }
+
+// module.exports = function (api) {
+//   api.cache(true)
+
+//   return {
+//     presets: ['babel-preset-expo'],
+//     plugins: [
+//       'nativewind/babel',
+//       ['@babel/plugin-transform-class-properties', { loose: true }],
+//       ['@babel/plugin-transform-private-methods', { loose: true }],
+//       ['@babel/plugin-transform-private-property-in-object', { loose: true }],
+//       'react-native-reanimated/plugin', // 👈 must always be last
+//     ],
+//   }
+// }
+
 module.exports = function (api) {
-  api.cache(true);
-
+  api.cache(true)
   return {
-    presets: [['babel-preset-expo'], 'nativewind/babel'],
-
-    plugins: [
-      [
-        'module-resolver',
-        {
-          root: ['./'],
-
-          alias: {
-            '@': './',
-            'tailwind.config': './tailwind.config.js',
-          },
-        },
-      ],
-      'react-native-worklets/plugin',
+    presets: [
+      ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
+      'nativewind/babel',
     ],
-  };
-};
+  }
+}

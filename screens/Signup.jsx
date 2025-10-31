@@ -1,7 +1,8 @@
 import React from 'react'
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
-import DuesCard from './DuesCard'
-import SignUpForm from './SignUpForm'
+import WelcomeDuesCard from '../components/WelcomeDuesCard.js'
+import SignUpForm from '../components/SignupForm.js'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const SignUpScreen = ({ navigation }) => {
   const handleCreateAccount = (data) => {
@@ -39,7 +40,9 @@ const SignUpScreen = ({ navigation }) => {
   }
 
   return (
-    <View className="flex-1 bg-[#0a1520]">
+    <SafeAreaView className="flex-1 bg-[#0a1520]">
+
+    {/* <View className="flex-1 bg-[#0a1520]"> */}
       {/* Header */}
       <View className="flex-row justify-between items-center px-6 pt-12 pb-4">
         <View className="flex-row items-center">
@@ -53,7 +56,7 @@ const SignUpScreen = ({ navigation }) => {
 
       <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
         {/* Dues Card Component */}
-        <DuesCard
+        <WelcomeDuesCard
           maxDues="—"
           minDues="—"
           totalDue="—"
@@ -102,7 +105,8 @@ const SignUpScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </ScrollView>
-    </View>
+    {/* </View> */}
+    </SafeAreaView>
   )
 }
 
