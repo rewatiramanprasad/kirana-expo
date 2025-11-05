@@ -1,5 +1,5 @@
 {
-  "name": "react-native-init-authenticate-navigation",
+  "name": "kiranaStoreApp",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "@react-navigation/stack": "^6.4.1",
     "expo": "~54.0.20",
     "expo-status-bar": "~3.0.8",
+    "lucide-react-native": "^0.552.0",
     "nativewind": "^4.2.1",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "react": "19.1.0",

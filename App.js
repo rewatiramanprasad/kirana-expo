@@ -10,6 +10,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <PaperProvider theme={theme}>
+        
         <Navigation />
       </PaperProvider>
     </SafeAreaProvider>
