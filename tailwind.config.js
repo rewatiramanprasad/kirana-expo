@@ -16,7 +16,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#00BCD4', // bright cyan for buttons and highlights
-        secondary: '#0E2A35', // deep bluish-gray for cards and secondary elements
+        secondary: '#0b2233', // deep bluish-gray for cards and secondary elements
         tertiary: '#050E14', // dark navy for main background
         background: '#0f1724', // matches tertiary for consistency
         text: '#FFFFFF', // main text color

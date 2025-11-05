@@ -20,51 +20,36 @@
 import React, { useState } from 'react'
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
 import { Searchbar, Button, Icon } from 'react-native-paper'
+import SearchBar from '../components/list/Searchbar'
+import ActionButton from '../components/list/ActionButton'
+import StatsCard from '../components/list/StatsCard'
 
 // Search Bar Component
-const SearchBarComponent = ({ placeholder, onSearch }) => {
-  const [searchQuery, setSearchQuery] = useState('')
+// const SearchBarComponent = ({ placeholder, onSearch }) => {
+//   const [searchQuery, setSearchQuery] = useState('')
 
-  const onChangeSearch = (query) => {
-    setSearchQuery(query)
-    if (onSearch) onSearch(query)
-  }
+//   const onChangeSearch = (query) => {
+//     setSearchQuery(query)
+//     if (onSearch) onSearch(query)
+//   }
 
-  return (
-    <View className="px-4 py-2">
-      <Searchbar
-        placeholder={placeholder}
-        onChangeText={onChangeSearch}
-        value={searchQuery}
-        className="bg-slate-700 rounded-lg"
-        iconColor="#9CA3AF"
-        placeholderTextColor="#9CA3AF"
-        inputStyle={{ color: '#FFFFFF' }}
-      />
-    </View>
-  )
-}
+//   return (
+//     <View className="px-4 py-2">
+//       <Searchbar
+//         placeholder={placeholder}
+//         onChangeText={onChangeSearch}
+//         value={searchQuery}
+//         className="bg-slate-700 rounded-lg"
+//         iconColor="#9CA3AF"
+//         placeholderTextColor="#9CA3AF"
+//         inputStyle={{ color: '#FFFFFF' }}
+//       />
+//     </View>
+//   )
+// }
 
 // Action Button Component
-const ActionButton = ({ icon, label, onPress }) => (
-  <TouchableOpacity
-    onPress={onPress}
-    className="flex-row items-center px-3 py-2 bg-slate-700 rounded-lg"
-  >
-    <Icon source={icon} size={16} color="#60A5FA" />
-    <Text className="text-blue-400 text-xs ml-1">{label}</Text>
-  </TouchableOpacity>
-)
-
 // Stats Card Component
-const StatsCard = ({ label, value, isPrimary }) => (
-  <View
-    className={`flex-1 rounded-lg p-4 ${isPrimary ? 'bg-slate-700' : 'bg-slate-800'}`}
-  >
-    <Text className="text-gray-400 text-xs mb-2">{label}</Text>
-    <Text className="text-white text-2xl font-bold">{value}</Text>
-  </View>
-)
 
 // Customer Card Component
 const CustomerCard = ({
@@ -148,20 +133,20 @@ const MemberList = () => {
   ]
 
   return (
-    <View className="flex-1 bg-slate-900">
+    <View className="flex-1 bg-background">
       {/* Header */}
-      <View className="bg-slate-800 pt-12 pb-4 px-4">
-        <Text className="text-white text-xl font-bold mb-4">Members</Text>
+      <View className="bg-background pt-12 pb-4 px-4">
+        <Text className="!text-mutedText text-xl font-bold mb-4">Members</Text>
 
         {/* Search Bar */}
-        <SearchBarComponent
+        <SearchBar
           placeholder="Search name or phone"
           onSearch={setSearchQuery}
         />
 
         {/* Action Buttons */}
-        <View className="flex-row gap-2 mt-3">
-          <ActionButton icon="login" label="High to Low" onPress={() => {}} />
+        <View className="flex-row space-x-4 space-y-4 mt-3">
+          <ActionButton icon="login"  label="High to Low" onPress={() => {}} />
           <ActionButton icon="upload" label="Unpaid" onPress={() => {}} />
           <ActionButton
             icon="clock-outline"
