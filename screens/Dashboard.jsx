@@ -234,7 +234,7 @@ export default function Dashboard() {
           Dashboard
         </Text>
 
-        <View className="flex-row justify-between ">
+        <View className="flex-row justify-between space-x-4 space-y-4 ">
           <MaxDuesCard
             name="Ravi Kumar"
             amount={12450}

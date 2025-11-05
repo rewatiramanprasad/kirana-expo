@@ -9,3 +9,4 @@ const StatsCard = ({ label, value }) => (
   </View>
 )
 export default StatsCard
+ 

@@ -67,22 +67,29 @@ import React from 'react'
 import { View } from 'react-native'
 import { Card, Text, Avatar, useTheme } from 'react-native-paper'
 
-export default function MaxDuesCard({ title="Max Dues Person",name, amount, lastUpdated, avatarUrl }) {
+export default function MaxDuesCard({
+  title = 'Max Dues Person',
+  name,
+  amount,
+  lastUpdated,
+  avatarUrl,
+}) {
   const theme = useTheme()
 
   return (
     <Card
-      className="rounded-2xl mb-4 ml-2 mr-2"
+      className="rounded-2xl mb-4 p-2  "
       style={{
-        backgroundColor: theme.colors.cardBackground
-       }}
+        backgroundColor: theme.colors.cardBackground,
+        margin:4
+      }}
     >
-      <Card.Content className="p-4">
+      <Card.Content className="p-2">
         <Text
           className="text-base mb-3"
           style={{ color: theme.colors.mutedText }}
         >
-         {title}
+          {title}
         </Text>
 
         <View className="flex-row items-center mb-3">
@@ -110,4 +117,3 @@ export default function MaxDuesCard({ title="Max Dues Person",name, amount, last
     </Card>
   )
 }
-

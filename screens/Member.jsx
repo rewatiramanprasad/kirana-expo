@@ -231,10 +231,10 @@ const Member = () => {
   }
 
   return (
-    <View className="flex-1 bg-slate-900">
+    <View className="flex-1 bg-background">
       {/* Header */}
-      <View className="bg-slate-800 pt-12 pb-4 px-4">
-        <Text className="text-white text-xl font-bold">New Member</Text>
+      <View className="bg-background pt-12 pb-4 px-4">
+        <Text className="text-mutedText text-xl font-bold">New Member</Text>
       </View>
 
       {/* Form Content */}
