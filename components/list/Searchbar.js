@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import { Icon } from 'react-native-paper'
 const SearchBar = ({ value, onChangeText, placeholder }) => (
-  <View className="px-4 py-3">
+  <View className="px-4 pb-2">
     <View className="flex-row items-center bg-input border border-border rounded-full px-4 ">
       <Icon source="magnify" size={20} color="#9CA3AF" />
       <TextInput
