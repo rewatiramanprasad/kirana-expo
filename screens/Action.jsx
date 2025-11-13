@@ -15,105 +15,46 @@
 import React from 'react'
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import { Icon } from 'react-native-paper'
-
-// Action Card Component (for grid layout)
-const ActionCard = ({
-  icon,
-  title,
-  description,
-  onPress,
-  iconColor = '#06B6D4',
-}) => (
-  <TouchableOpacity
-    onPress={onPress}
-    className="bg-slate-800 rounded-lg p-4 flex-1"
-    style={{ minWidth: '48%' }}
-  >
-    <View className="mb-3">
-      <Icon source={icon} size={24} color={iconColor} />
-    </View>
-    <Text className="text-white text-base font-semibold mb-1">{title}</Text>
-    <Text className="text-gray-400 text-xs leading-4">{description}</Text>
-  </TouchableOpacity>
-)
-
-// Section Header Component
-const SectionHeader = ({ title }) => (
-  <View className="px-4 pt-6 pb-3">
-    <Text className="text-gray-400 text-xs font-medium uppercase tracking-wider">
-      {title}
-    </Text>
-  </View>
-)
+import { SectionHeader } from '../components/action/SectionHeader.js'
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
+import AntDesign from '@expo/vector-icons/AntDesign'
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
+import Feather from '@expo/vector-icons/Feather'
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
+import { ActionsGrid } from '../components/action/ActionsGrid.js'
+import ListItem from '../components/action/ListItem.js'
+import FontAwesome from '@expo/vector-icons/FontAwesome'
 
 // List Item Component (for vertical list items)
-const ListItem = ({
-  icon,
-  title,
-  description,
-  onPress,
-  iconColor = '#FFFFFF',
-}) => (
-  <TouchableOpacity
-    onPress={onPress}
-    className="bg-slate-800 mx-4 mb-3 rounded-lg p-4 flex-row items-center justify-between"
-  >
-    <View className="flex-row items-center flex-1">
-      <View className="w-10 h-10 bg-slate-700 rounded-lg items-center justify-center mr-3">
-        <Icon source={icon} size={20} color={iconColor} />
-      </View>
-      <View className="flex-1">
-        <Text className="text-white text-base font-semibold mb-1">{title}</Text>
-        <Text className="text-gray-400 text-xs">{description}</Text>
-      </View>
-    </View>
-    <Icon source="chevron-right" size={20} color="#6B7280" />
-  </TouchableOpacity>
-)
 
-// Actions Grid Component
-const ActionsGrid = ({ actions }) => (
-  <View className="px-4 flex-row flex-wrap gap-3">
-    {actions.map((action, index) => (
-      <ActionCard
-        key={index}
-        icon={action.icon}
-        title={action.title}
-        description={action.description}
-        onPress={action.onPress}
-        iconColor={action.iconColor}
-      />
-    ))}
-  </View>
-)
 
 // Main Actions Menu Screen
 const Action = () => {
   // Common Actions Data
   const commonActions = [
     {
-      icon: 'cash',
+      icon: <FontAwesome5 name="clipboard-list" size={24} color="#00BCD4" />,
       title: 'Mark Payments',
       description: 'Record full or partial payments received',
       iconColor: '#10B981',
       onPress: () => console.log('Mark Payments'),
     },
     {
-      icon: 'account-plus',
+      icon: <AntDesign name="user-add" size={24} color="#00BCD4" />,
       title: 'Add Member',
       description: 'Create a new member for tracking dues',
       iconColor: '#06B6D4',
       onPress: () => console.log('Add Member'),
     },
     {
-      icon: 'bell',
+      icon: <FontAwesome6 name="bell" size={24} color="#00BCD4" />,
       title: 'Remind Later',
       description: 'Schedule a follow-up reminder',
       iconColor: '#F59E0B',
       onPress: () => console.log('Remind Later'),
     },
     {
-      icon: 'download',
+      icon: <Feather name="download" size={24} color="#00BCD4" />,
       title: 'Export CSV',
       description: 'Download current due contacts list',
       iconColor: '#8B5CF6',
@@ -124,21 +65,21 @@ const Action = () => {
   // Bulk Operations Data
   const bulkOperations = [
     {
-      icon: 'email-send',
+      icon:<MaterialCommunityIcons name="email-outline" size={24} color="gray" />,
       title: 'Share Due Summary',
       description: 'Send a snapshot of totals to accountant',
       iconColor: '#3B82F6',
       onPress: () => console.log('Share Due Summary'),
     },
     {
-      icon: 'sync',
+      icon: <MaterialCommunityIcons name="sync" size={24} color="gray" />,
       title: 'Reconcile Records',
       description: 'Cross-check list to close entries',
       iconColor: '#06B6D4',
       onPress: () => console.log('Reconcile Records'),
     },
     {
-      icon: 'archive',
+      icon: <FontAwesome5 name="archive" size={24} color="gray" />,
       title: 'Archive Cleared Dues',
       description: 'Move fully paid entries to archive',
       iconColor: '#EF4444',
@@ -149,14 +90,14 @@ const Action = () => {
   // Tools Data
   const tools = [
     {
-      icon: 'filter',
+      icon: <FontAwesome name="filter" size={24} color="gray" />,
       title: 'Filter Contacts',
       description: 'Show only overdue or high due amounts',
       iconColor: '#F59E0B',
       onPress: () => console.log('Filter Contacts'),
     },
     {
-      icon: 'calendar-clock',
+      icon: <FontAwesome name="calendar-o" size={24} color="gray" />,
       title: 'Set Reminder Day',
       description: 'Tip: Use Export to back up due contacts regularly',
       iconColor: '#10B981',
@@ -165,11 +106,11 @@ const Action = () => {
   ]
 
   return (
-    <View className="flex-1 bg-slate-900">
+    <View className="flex-1 !bg-background">
       {/* Header */}
-      <View className="bg-slate-800 pt-12 pb-4 px-4">
-        <Text className="text-white text-xl font-bold">Actions Menu</Text>
-      </View>
+      {/* <View className="bg-background p-4">
+        <Text className=" text-lg text-mutedText font-bold">Actions Menu</Text>
+      </View> */}
 
       <ScrollView className="flex-1">
         {/* Common Actions Section */}
