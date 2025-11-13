@@ -77,14 +77,8 @@ export default function MaxDuesCard({
   const theme = useTheme()
 
   return (
-    <Card
-      className="rounded-2xl mb-4 p-2  "
-      style={{
-        backgroundColor: theme.colors.cardBackground,
-        margin:4
-      }}
-    >
-      <Card.Content className="p-2">
+    <Card className="rounded-2xl !bg-cardBackground border border-border mb-4 px-0">
+      <Card.Content className=" p-0">
         <Text
           className="text-base mb-3"
           style={{ color: theme.colors.mutedText }}
@@ -93,17 +87,17 @@ export default function MaxDuesCard({
         </Text>
 
         <View className="flex-row items-center mb-3">
-          <Avatar.Image size={50} source={{ uri: avatarUrl }} />
-          <View className="ml-3">
+          <Avatar.Image size={40} source={{ uri: avatarUrl }} />
+          <View className="ml-2">
             <Text
               className="text-lg font-semibold"
               style={{ color: theme.colors.text }}
             >
               {name}
             </Text>
-            <Text className="text-xs" style={{ color: theme.colors.mutedText }}>
+            {/* <Text className="text-xs" style={{ color: theme.colors.mutedText }}>
               Last updated {lastUpdated}
-            </Text>
+            </Text> */}
           </View>
         </View>
 
