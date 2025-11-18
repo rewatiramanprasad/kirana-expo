@@ -171,6 +171,7 @@ const MemberList = () => {
       <ScrollView className="flex-1 px-4 pt-4">
         {members.map((member) => (
           <CustomerCard
+            member={member}
             key={member.id}
             name={member.name}
             lastTransaction={member.lastTransaction}
