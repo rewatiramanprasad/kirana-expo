@@ -13,6 +13,7 @@ const theme = {
     mutedText: '#9AA8B2', // lighter gray-blue for labels and placeholders
     border: '#1f2a44',
     cardBackground: '#0b2233', // subtle border color if needed
+    warning: '#ffb020',
   },
 }
 

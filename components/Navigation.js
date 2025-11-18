@@ -15,6 +15,9 @@ import MemberList from '../screens/List.jsx'
 import Member from '../screens/Member.jsx'
 import Contact from '../screens/Contact.jsx'
 import Action from '../screens/Action.jsx'
+import MemberStack from './list/MemberStack.js'
+import MemberDetails from '../screens/MemberDetails.jsx'
+import NewDueEntry from '../screens/NewDueEntry.jsx'
 
 function HomeScreen() {
   return (
@@ -95,7 +98,7 @@ export default function Navigation() {
       >
         <Tab.Screen
           name="Dashboard"
-          component={Dashboard}
+          component={NewDueEntry}
           options={{
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons
@@ -108,7 +111,7 @@ export default function Navigation() {
         />
         <Tab.Screen
           name="List"
-          component={MemberList}
+          component={MemberStack}
           options={{
             tabBarIcon: ({ color }) => (
               <FontAwesome5 name="list" size={24} color={color} />
