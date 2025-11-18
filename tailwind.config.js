@@ -28,6 +28,7 @@ module.exports = {
         border: '#1f2a44',
         cardBackground: '#0b2233', // subtle card color
         input: '#111827',
+        warning: '#ffb020',
       },
     },
   },
